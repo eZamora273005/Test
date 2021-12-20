@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margins_distance"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tilName"
+            android:hint="@string/name"
+            app:endIconMode="clear_text"
+            app:helperText="Ingresa el nombre del producto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:id="@+id/etName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/menuInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_padding_default"
+            app:layout_constraintTop_toBottomOf="@id/tilName"
+            app:endIconMode="dropdown_menu"
+            android:hint="@string/menu_label">
+
+            <AutoCompleteTextView
+                android:id="@+id/tvAutoComplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tilMultilineDescription"
+            android:layout_marginTop="@dimen/common_padding_default"
+            android:hint="@string/description_label"
+            app:helperText="Ingresa la descripción del producto"
+            app:endIconMode="clear_text"
+            app:layout_goneMarginTop="@dimen/common_padding_default"
+            app:layout_constraintTop_toBottomOf="@id/menuInput"
+            app:layout_constraintStart_toStartOf="@id/menuInput"
+            app:counterEnabled="true"
+            app:counterMaxLength="1000"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tilMultilineDescription"
+                android:id="@+id/etMultilineDescription"
+                android:lines="3"
+                android:maxLines="5"
+                android:minLines="3"
+                android:maxLength="1000"
+                android:gravity="top|left"
+                android:scrollbars="vertical"
+                android:inputType="textCapSentences|textMultiLine"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/datePicker"
+            android:layout_marginTop="@dimen/common_padding_default"
+            android:hint="@string/date_label"
+            app:helperText="@string/select_date_label"
+            app:layout_constraintTop_toBottomOf="@id/tilMultilineDescription"
+            app:layout_constraintStart_toStartOf="@id/menuInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tilMultilineDescription"
+                android:id="@+id/etDatePicker"
+                android:lines="1"
+                android:scrollbars="vertical"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="date"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSaveData"
+            app:icon="@drawable/ic_baseline_save"
+            android:layout_marginTop="@dimen/common_padding_default"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/datePicker"
+            android:text="@string/save_label"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSeeList"
+            app:layout_constraintTop_toBottomOf="@id/btnSaveData"
+            android:text="@string/ver_lista"
+            app:icon="@drawable/ic_baseline_view_list_24"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

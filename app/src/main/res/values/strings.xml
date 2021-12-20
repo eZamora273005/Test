@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Prueba</string>
+    <string name="name">Nombre</string>
+    <string name="menu_label">Menu</string>
+    <string name="description_label">Descripción</string>
+    <string name="save_label">Guardar</string>
+    <string name="select_date_label">Selecciona la fecha de adquisición</string>
+    <string name="date_label">Fecha</string>
+    <string name="ver_lista">Ver lista</string>
+
+
+    <string-array name="types">
+        <item>Electrónico</item>
+        <item>Inmobiliario</item>
+        <item>Decoración</item>
+        <item>Luminaria</item>
+        <item>Electrodoméstico</item>
+        <item>Libros</item>
+    </string-array>
+</resources>
